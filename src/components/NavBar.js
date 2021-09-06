@@ -1,4 +1,5 @@
 import React from 'react';
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
   const a = 1;
@@ -18,7 +19,7 @@ const NavBar = () => {
             </a>
           </li>
           <li><a href="collapsible.html">Adopta</a></li>
-          <li><a href="collapsible.html"><i className="material-icons">shopping_cart</i></a></li>
+          <li><CartWidget /></li>
         </ul>
       </div>
     </nav>
