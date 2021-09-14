@@ -1,16 +1,21 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
-import ItemCount from './ItemCount';
+import React, { useEffect, useState } from 'react';
+import { getItems } from '../data/mock';
+import ItemList from './ItemList';
 
 const ItemListContainer = ({ greeting }) => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    getItems().then(setItems);
+  });
+
   const onAdd = (count) => console.log(count);
 
   return (
     <div>
       <h1>{ greeting }</h1>
-      <ItemCount initial={2} stock={15} onAdd={onAdd} />
-      <ItemCount initial={5} stock={5} onAdd={onAdd} />
-      <ItemCount stock={20} onAdd={onAdd} />
+      <ItemList items={items} onAdd={onAdd} />
     </div>
   );
 };
