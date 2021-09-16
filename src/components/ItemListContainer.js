@@ -9,7 +9,7 @@ const ItemListContainer = ({ greeting }) => {
 
   useEffect(() => {
     getItems().then(setItems);
-  });
+  }, []);
 
   const onAdd = (count) => console.log(count);
 

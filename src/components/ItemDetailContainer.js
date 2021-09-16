@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     getItem().then(setItem);
-  });
+  }, []);
 
   return (
     <ItemDetail item={item} />
