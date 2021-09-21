@@ -1,29 +1,24 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
-const NavBar = () => {
-  const a = 1;
-  return (
-    <nav>
-      <div className="nav-wrapper purple lighten-2">
-        <a href="www.someurl.com" className="brand-logo">Die Katze</a>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li>
-            <a href="sass.html">
-              Productos
-            </a>
-          </li>
-          <li>
-            <a href="badges.html">
-              Quienes somos
-            </a>
-          </li>
-          <li><a href="collapsible.html">Adopta</a></li>
-          <li><CartWidget /></li>
-        </ul>
-      </div>
-    </nav>
-  );
-};
+const NavBar = ({ categories }) => (
+  <nav>
+    <div className="nav-wrapper purple lighten-2">
+      <Link to="/" className="brand-logo">Die Katze</Link>
+      <ul id="nav-mobile" className="right hide-on-med-and-down">
+        {categories.map((category) => <li><NavLink to={`/category/${category}`} activeStyle={{ backgroundColor: 'rgba(0,0,0,0.1)' }}>{category}</NavLink></li>)}
+        <li>
+          <a href="badges.html">
+            Quienes somos
+          </a>
+        </li>
+        <li><a href="collapsible.html">Adopta</a></li>
+        <li><CartWidget /></li>
+      </ul>
+    </div>
+  </nav>
+);
 
 export default NavBar;
