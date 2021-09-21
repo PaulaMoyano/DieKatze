@@ -22,10 +22,10 @@ function App() {
         <Route path="/" exact>
           <ItemListContainer greeting="Hola!" />
         </Route>
-        <Route path="/category/:id">
+        <Route path="/category/:categoryId">
           <ItemListContainer greeting="Hola!" />
         </Route>
-        <Route path="/item/:categoryId">
+        <Route path="/item/:id">
           <ItemDetailContainer />
         </Route>
       </Switch>
