@@ -2,7 +2,7 @@
 import React from 'react';
 import ItemCount from './ItemCount';
 
-const ItemDetail = ({ item, onAdd }) => (
+const ItemDetail = ({ item, onAdd, quantityOnCart }) => (
   <div className="card center-align purple lighten-4">
     <div className="card-content white-text">
       <span className="card-title">
@@ -17,7 +17,7 @@ const ItemDetail = ({ item, onAdd }) => (
       </p>
     </div>
     <div className="card-action">
-      <ItemCount stock={5} onAdd={onAdd} />
+      {!quantityOnCart ? <ItemCount stock={5} onAdd={onAdd} /> : null}
     </div>
   </div>
 );
