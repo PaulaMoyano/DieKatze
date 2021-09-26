@@ -16,8 +16,9 @@ const ItemDetail = ({ item, onAdd, quantityOnCart }) => (
         {item.description}
       </p>
     </div>
-    <div className="card-action">
-      {!quantityOnCart ? <ItemCount stock={5} onAdd={onAdd} /> : null}
+    <div className="card-action" style={{ height: '120px' }}>
+      {!quantityOnCart ? <ItemCount stock={5} onAdd={onAdd} />
+        : <span>Este producto ya se encuentra en el carrito.</span>}
     </div>
   </div>
 );

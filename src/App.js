@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
 import { getCategories } from './data/mock';
+import CartProvider from './context/CartContext';
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -17,23 +18,25 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <NavBar categories={categories} />
-      <Switch>
-        <Route path="/" exact>
-          <ItemListContainer greeting="Hola!" />
-        </Route>
-        <Route path="/category/:categoryId">
-          <ItemListContainer greeting="Hola!" />
-        </Route>
-        <Route path="/item/:id">
-          <ItemDetailContainer />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <NavBar categories={categories} />
+        <Switch>
+          <Route path="/" exact>
+            <ItemListContainer greeting="Hola!" />
+          </Route>
+          <Route path="/category/:categoryId">
+            <ItemListContainer greeting="Hola!" />
+          </Route>
+          <Route path="/item/:id">
+            <ItemDetailContainer />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
