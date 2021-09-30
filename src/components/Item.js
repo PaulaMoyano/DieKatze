@@ -28,8 +28,7 @@ const Item = ({ item, onAdd }) => {
         </div>
       </Link>
       <div className="card-action" style={{ height: '120px' }}>
-        {!quantity ? <ItemCount stock={5} onAdd={onAddToCart} />
-          : <span>Este producto ya se encuentra en el carrito.</span>}
+        <ItemCount stock={5} onAdd={onAddToCart} quantity={quantity} />
       </div>
     </div>
   );

@@ -17,8 +17,7 @@ const ItemDetail = ({ item, onAdd, quantityOnCart }) => (
       </p>
     </div>
     <div className="card-action" style={{ height: '120px' }}>
-      {!quantityOnCart ? <ItemCount stock={5} onAdd={onAdd} />
-        : <span>Este producto ya se encuentra en el carrito.</span>}
+      <ItemCount stock={5} onAdd={onAdd} quantity={quantityOnCart} />
     </div>
   </div>
 );

@@ -6,9 +6,9 @@ function CartWidget() {
   const { cartSize } = useContext(CartContext);
 
   return (
-    <NavLink to="/cart" activeStyle={{ backgroundColor: 'rgba(0,0,0,0.1)' }}>
-      <i className={`material-icons ${cartSize > 0 ? 'left' : ''}`}>shopping_cart</i>
-      {cartSize > 0 ? (
+    cartSize > 0 ? (
+      <NavLink to="/cart" activeStyle={{ backgroundColor: 'rgba(0,0,0,0.1)' }} style={{ position: 'relative' }}>
+        <i className={`material-icons ${cartSize > 0 ? 'left' : ''}`}>shopping_cart</i>
         <span
           className="new badge"
           data-badge-caption=""
@@ -27,8 +27,8 @@ function CartWidget() {
         >
           {cartSize}
         </span>
-      ) : null}
-    </NavLink>
+      </NavLink>
+    ) : null
   );
 }
 export default CartWidget;
