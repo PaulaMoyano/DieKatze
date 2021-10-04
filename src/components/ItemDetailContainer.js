@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import { getItem } from '../api/items';
 import { CartContext } from '../context/CartContext';
-import { getItem } from '../data/mock';
 import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer = () => {
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
-    getItem(parseInt(id, 10)).then((result) => {
+    getItem(id).then((result) => {
       setItem(result);
     });
   }, [id]);

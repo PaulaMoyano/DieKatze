@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { getItems, getItemsByCategory } from '../api/items';
 import { CartContext } from '../context/CartContext';
-import { getItems } from '../data/mock';
 import ItemList from './ItemList';
 
 const ItemListContainer = ({ greeting }) => {
@@ -11,7 +11,8 @@ const ItemListContainer = ({ greeting }) => {
   const { addItem } = useContext(CartContext);
 
   useEffect(() => {
-    getItems(categoryId).then(setItems);
+    const request = categoryId ? getItemsByCategory(categoryId) : getItems();
+    request.then(setItems);
   }, [categoryId]);
 
   return (

@@ -20,7 +20,7 @@ function Cart() {
       </div>
       {cart.map((item) => (
         <div className="row purple lighten-4 z-depth-2" style={{ margin: '5px 0' }} key={item.id}>
-          <div className="col s2 l2 xl1 offset-l2 offset-xl3"><img className="responsive-img circle" src={item.pictureURL} alt={item.title} style={{ maxHeight: '100px' }} /></div>
+          <div className="col s2 l2 xl1 offset-l2 offset-xl3"><img className="responsive-img circle" src={`${process.env.PUBLIC_URL}/assets/${item.pictureURL}`} alt={item.title} style={{ maxHeight: '100px' }} /></div>
           <div className="col s4 l3 xl2">
             <p>{item.title}</p>
             <p>

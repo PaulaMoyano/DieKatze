@@ -8,7 +8,7 @@ const NavBar = ({ categories }) => (
     <div className="nav-wrapper purple lighten-2">
       <Link to="/" className="brand-logo">Die Katze</Link>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
-        {categories.map((category) => <li><NavLink to={`/category/${category}`} activeStyle={{ backgroundColor: 'rgba(0,0,0,0.1)' }}>{category}</NavLink></li>)}
+        {categories.map(({ key }) => <li><NavLink to={`/category/${key}`} activeStyle={{ backgroundColor: 'rgba(0,0,0,0.1)' }}>{key}</NavLink></li>)}
         <li>
           <a href="badges.html">
             Quienes somos

@@ -8,7 +8,7 @@ const ItemDetail = ({ item, onAdd, quantityOnCart }) => (
       <span className="card-title">
         {item.title}
       </span>
-      <img className="responsive-img circle" src={item.pictureURL} alt={item.title} style={{ maxHeight: '40vh' }} />
+      <img className="responsive-img circle" src={`${process.env.PUBLIC_URL}/assets/${item.pictureURL}`} alt={item.title} style={{ maxHeight: '40vh' }} />
       <p>
         {`$${item.price}`}
       </p>
@@ -17,7 +17,7 @@ const ItemDetail = ({ item, onAdd, quantityOnCart }) => (
       </p>
     </div>
     <div className="card-action" style={{ height: '120px' }}>
-      <ItemCount stock={5} onAdd={onAdd} quantity={quantityOnCart} />
+      <ItemCount stock={item.stock} onAdd={onAdd} quantity={quantityOnCart} />
     </div>
   </div>
 );

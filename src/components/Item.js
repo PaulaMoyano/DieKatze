@@ -16,19 +16,19 @@ const Item = ({ item, onAdd }) => {
 
   return (
     <div className="card center-align purple lighten-4">
-      <Link to={`/item/${item.id}`}>
+      <Link to={`/item/${item.uid}`}>
         <div className="card-content white-text">
           <span className="card-title">
             {item.title}
           </span>
-          <img className="responsive-img circle" src={item.pictureURL} alt={item.title} style={{ maxHeight: '200px' }} />
+          <img className="responsive-img circle" src={`${process.env.PUBLIC_URL}/assets/${item.pictureURL}`} alt={item.title} style={{ maxHeight: '200px' }} />
           <p>
             {`$${item.price}`}
           </p>
         </div>
       </Link>
       <div className="card-action" style={{ height: '120px' }}>
-        <ItemCount stock={5} onAdd={onAddToCart} quantity={quantity} />
+        <ItemCount stock={item.stock} onAdd={onAddToCart} quantity={quantity} />
       </div>
     </div>
   );

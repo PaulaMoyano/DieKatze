@@ -7,8 +7,8 @@ import Cart from './components/Cart';
 
 import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
-import { getCategories } from './data/mock';
 import CartProvider from './context/CartContext';
+import { getCategories } from './api/categories';
 
 function App() {
   const [categories, setCategories] = useState([]);
