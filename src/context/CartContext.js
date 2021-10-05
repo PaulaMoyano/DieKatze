@@ -29,13 +29,13 @@ const CartProvider = ({ defaultValue = [], children }) => {
     setCart(cart.filter((item) => item.id !== itemId));
   };
 
-  const clear = () => {
+  const clearCart = () => {
     setCart([]);
   };
 
   return (
     <CartContext.Provider value={{
-      cart, addItem, removeItem, clear, isInCart, getFromCart, cartSize,
+      cart, addItem, removeItem, clearCart, isInCart, getFromCart, cartSize,
     }}
     >
       {children}
