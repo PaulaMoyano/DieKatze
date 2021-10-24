@@ -3,12 +3,12 @@ import React from 'react';
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({ item, onAdd, quantityOnCart }) => (
-  <div className="card center-align purple lighten-4">
+  <div className="card center-align cyan lighten-3">
     <div className="card-content white-text">
       <span className="card-title">
         {item.title}
       </span>
-      <img className="responsive-img circle" src={`${process.env.PUBLIC_URL}/assets/${item.pictureURL}`} alt={item.title} style={{ maxHeight: '40vh' }} />
+      <img className="responsive-img circle" src={`${process.env.PUBLIC_URL}/assets/${item.pictureURL}`} alt={item.title} style={{ height: '300px', width: '300px' }} />
       <p>
         {`$${item.price}`}
       </p>

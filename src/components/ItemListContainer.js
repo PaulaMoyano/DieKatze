@@ -17,7 +17,19 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <div>
-      <h1>{ greeting }</h1>
+      <div
+        className="valign-wrapper"
+        style={{
+          backgroundImage: `url(${`${process.env.PUBLIC_URL}/assets/mainBackground.jpg`})`,
+          backgroundPosition: 'center 85%',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          width: '100%',
+          height: 'calc(100vh - 65px)',
+        }}
+      >
+        <h1 className="white-text" style={{ margin: 0 }}>{ greeting }</h1>
+      </div>
       <ItemList items={items} onAdd={addItem} />
     </div>
   );

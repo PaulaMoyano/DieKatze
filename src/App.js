@@ -23,10 +23,10 @@ function App() {
         <NavBar categories={categories} />
         <Switch>
           <Route path="/" exact>
-            <ItemListContainer greeting="Hola!" />
+            <ItemListContainer greeting="¡Hola!" />
           </Route>
           <Route path="/category/:categoryId">
-            <ItemListContainer greeting="Hola!" />
+            <ItemListContainer greeting="¡Hola!" />
           </Route>
           <Route path="/item/:id">
             <ItemDetailContainer />
