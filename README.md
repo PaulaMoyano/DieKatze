@@ -11,3 +11,4 @@ Esta destinada a facilitar las compras de humanos compañeros de gatos.
 4. Se pueden sumar y restar productos al carrito.
 5. Una vez finalizada la compra, se generará una "orden de compra".
 
+Link a la app: https://diekatze.netlify.app/
