@@ -13,7 +13,6 @@ const CartProvider = ({ defaultValue = [], children }) => {
 
   const addItem = (item, quantity) => {
     if (isInCart(item && item.id)) {
-      console.log('Won\'t add existing product to cart');
       return;
     }
 
@@ -22,7 +21,6 @@ const CartProvider = ({ defaultValue = [], children }) => {
 
   const removeItem = (itemId) => {
     if (!isInCart(itemId)) {
-      console.log('Item is not in cart');
       return;
     }
 
