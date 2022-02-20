@@ -1,7 +1,7 @@
 # Die Kazte / Tienda online de productos para gatos
 
 Die Kazte es una tienda online con productos para gatos: alimentos secos y humedos, snacks, piedras sanitarias, kits de higiene, juguetes tales como ratoncitos y plumitas.
-Esta destinada a facilitar las compras de humanos compañeros de gatos. 
+Está destinada a facilitar las compras de humanos compañeros de gatos. 
 
 ## Instrucciones para correr la aplicacion
 
